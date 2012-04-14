@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Activate PHPDoc' do |cmd|
+command 'Add PHPDoc For Method/Function' do |cmd|
   cmd.key_binding = 'CONTROL+SHIFT+COMMAND+W'
   cmd.output = :insert_as_snippet
   cmd.input = :selection

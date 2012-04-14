@@ -79,6 +79,18 @@ END
       submenu.command 'Header'
       submenu.command 'Interface'
     end
+    main_menu.separator
+    main_menu.menu 'Custom Commands' do |submenu|
+      submenu.menu 'Generate Getters/Setters' do |submenu2|
+        submenu2.command 'Getter/Setter generator'
+        submenu2.command 'Getter generator'
+        submenu2.command 'Setter generator'
+      end      
+      submenu.menu 'PHPDoc Commands' do |submenu2|
+        submenu2.command 'Add PHPDoc For Method/Function'
+      end
+      
+    end
   end
 end
 
