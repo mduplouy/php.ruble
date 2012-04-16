@@ -84,7 +84,8 @@ $0'
   
   snippet 'else ...' do |s|
     s.trigger = 'else'
-    s.expansion = 'else {
+    s.expansion = 'else 
+{
 	${0:// code...}
 }'
   end
