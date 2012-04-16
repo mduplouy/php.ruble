@@ -8,7 +8,7 @@ command 'Add PHPDoc For Method/Function' do |cmd|
   cmd.input = :selection
   cmd.invoke do |context|
     input = STDIN.read
-    signature = input.scan(/\(([^\)]+)/)[0][0]
+    signature = input.scan(/function [a-zA-Z0-9_]+[ ]?\(([^\)]*)/i)[0][0]
     methodName = input.scan(/function ([^\(]+)/)[0][0]
     methodNameArray = methodName.strip().split("_")
     methodDescription = ""
@@ -21,18 +21,23 @@ command 'Add PHPDoc For Method/Function' do |cmd|
     toPrint += "\t * " + "${" + @@COUNT.to_s + ":" + methodDescription + "}\n"
     @@COUNT += 1
     toPrint += "\t *\n"
-    signatureStringSplit.each do |myVar|
-      CONSOLE.puts "HERE"
-      myVar = myVar.strip().gsub!('$', '\$')
-      varType = (myVar =~ /id$/) ? "integer" : "string"
-      if myVar.include? " "
-        myVarArray = myVar.split(' ')
-        myVar = myVarArray[1]
-        varType = myVarArray[0]
+    CONSOLE.puts signatureStringSplit.count
+    CONSOLE.puts signatureStringSplit.inspect
+    if signatureStringSplit.count > 0
+      signatureStringSplit.each do |myVar|
+        CONSOLE.puts "HERE"
+        myVar = myVar.strip().gsub!('$', '\$')
+        varType = (myVar =~ /id$/) ? "integer" : "string"
+        if myVar.include? " "
+          myVarArray = myVar.split(' ')
+          myVar = myVarArray[1]
+          varType = myVarArray[0]
+        end
+        toPrint += "\t * @param ${" + @@COUNT.to_s + ":" + varType + "} " + myVar + "\n";
+        @@COUNT += 1
       end
-      toPrint += "\t * @param ${" + @@COUNT.to_s + ":" + varType + "} " + myVar + "\n";
-      @@COUNT += 1
     end
+
     CONSOLE.puts "AFTER"
     if /\breturn\b/.match(input) 
       toPrint += "\t * @return ${" + @@COUNT.to_s + ":string}\n"
