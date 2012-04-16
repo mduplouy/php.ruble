@@ -50,7 +50,7 @@ command 'Add PHPDoc For Class Variables' do |cmd|
       variableDescription += namePart.capitalize + " "
     end
     variableDescription = variableDescription.strip()
-    toPrint = "\t/**\n";
+    toPrint = "\n\t/**\n";
     toPrint += "\t * " + "${" + @@COUNT.to_s + ":" + variableDescription + "}\n"
     @@COUNT += 1
     variableName = variableName.strip()
