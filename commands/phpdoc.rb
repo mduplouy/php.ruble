@@ -30,14 +30,10 @@ command 'Add PHPDoc For Method/Function' do |cmd|
         varType = ""
 
         if myVarArray[1]
-          if myVarArray[1].strip() == "true" || myVarArray[1].strip() == "false"
-            varType = "boolean"
-          else 
-            varType = myVarArray[1] =~ /id$/ ? "integer" : "string"
-          end
+          varType = get_var_type(myVarArray[1])
         end
         if varType == ""
-          varType = (myVar =~ /id$/) ? "integer" : "string"
+          varType = get_var_type(varType)
         end
         if myVar.include? " "
           myVarArray = myVar.split(' ')
@@ -76,7 +72,7 @@ command 'Add PHPDoc For Class Variables' do |cmd|
     toPrint += "\t * " + "${" + @@COUNT.to_s + ":" + variableDescription + "}\n"
     @@COUNT += 1
     variableName = variableName.strip()
-    varType = (variableName =~ /id$/) ? "integer" : "string"
+    varType = get_var_type(variableName)
     toPrint += "\t * @var ${" + @@COUNT.to_s + ":" + varType + "}\n"
     @@COUNT += 1
 
@@ -84,4 +80,18 @@ command 'Add PHPDoc For Class Variables' do |cmd|
     toPrint += input.gsub!('$', '\$')
     print toPrint
   end
+end
+
+def get_var_type(var)
+  var = var.strip()
+  if var == "true" || var == "false"
+    varType = "boolean"
+  elsif (var =~ /id$/ || var =~ /^[0-9]+$/)
+    varType = "integer"
+  elsif (var =~ /array/i)
+    varType = "array"
+  else
+    varType = "string"
+  end
+  return varType
 end
