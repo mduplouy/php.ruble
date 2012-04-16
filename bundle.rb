@@ -88,6 +88,7 @@ END
       end      
       submenu.menu 'PHPDoc Commands' do |submenu2|
         submenu2.command 'Add PHPDoc For Method/Function'
+        submenu2.command 'Add PHPDoc For Class Variables'
       end
       
     end
