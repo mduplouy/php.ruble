@@ -22,17 +22,27 @@ command 'Add PHPDoc For Method/Function' do |cmd|
     @@COUNT += 1
     toPrint += "\t *\n"
     signatureStringSplit.each do |myVar|
-            myVar = myVar.strip().gsub!('$', '\$')
-            varType = (myVar =~ /id$/) ? "integer" : "string"
-            toPrint += "\t * @param ${" + @@COUNT.to_s + ":" + varType + "} " + myVar + "\n";
-            @@COUNT += 1
+      CONSOLE.puts "HERE"
+      myVar = myVar.strip().gsub!('$', '\$')
+      varType = (myVar =~ /id$/) ? "integer" : "string"
+      if myVar.include? " "
+        myVarArray = myVar.split(' ')
+        myVar = myVarArray[1]
+        varType = myVarArray[0]
+      end
+      toPrint += "\t * @param ${" + @@COUNT.to_s + ":" + varType + "} " + myVar + "\n";
+      @@COUNT += 1
     end
+    CONSOLE.puts "AFTER"
     if /\breturn\b/.match(input) 
       toPrint += "\t * @return ${" + @@COUNT.to_s + ":string}\n"
       @@COUNT += 1
     end
+    CONSOLE.puts toPrint
     toPrint += "\t */\n"
+    CONSOLE.puts toPrint
     toPrint += input.gsub!('$', '\$')
+    CONSOLE.puts toPrint
     print toPrint
   end
 end
