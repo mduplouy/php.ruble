@@ -23,10 +23,22 @@ command 'Add PHPDoc For Method/Function' do |cmd|
     toPrint += "\t *\n"
     if signatureStringSplit.count > 0
       signatureStringSplit.each do |myVar|
-        myVar = myVar.split("=");
-        myVar = myVar[0].strip()
-        myVar = myVar.strip().gsub!('$', '\$')
-        varType = (myVar =~ /id$/) ? "integer" : "string"
+        myVarArray = myVar.split("=");
+        
+        myVar = myVarArray[0].strip()
+        myVar = myVar.gsub!('$', '\$')
+        varType = ""
+
+        if myVarArray[1]
+          if myVarArray[1].strip() == "true" || myVarArray[1].strip() == "false"
+            varType = "boolean"
+          else 
+            varType = myVarArray[1] =~ /id$/ ? "integer" : "string"
+          end
+        end
+        if varType == ""
+          varType = (myVar =~ /id$/) ? "integer" : "string"
+        end
         if myVar.include? " "
           myVarArray = myVar.split(' ')
           myVar = myVarArray[1]
