@@ -15,6 +15,14 @@ command 'Add PHPDoc For Method/Function' do |cmd|
     methodNameArray.each do |namePart|
       methodDescription += namePart.capitalize + " "
     end
+    if methodNameArray.count == 1
+      methodNameArray = methodName.split /(?=[A-Z])/
+      methodDescription = ""
+      methodNameArray.each do |namePart|
+        methodDescription += namePart.capitalize + " "
+      end
+      methodDescription.strip()
+    end
     methodDescription = methodDescription.strip()
     signatureStringSplit = signature.split(',');
     toPrint = "\t/**\n";
@@ -33,7 +41,7 @@ command 'Add PHPDoc For Method/Function' do |cmd|
           varType = get_var_type(myVarArray[1])
         end
         if varType == ""
-          varType = get_var_type(varType)
+          varType = get_var_type(myVar)
         end
         if myVar.include? " "
           myVarArray = myVar.split(' ')
@@ -86,7 +94,7 @@ def get_var_type(var)
   var = var.strip()
   if var == "true" || var == "false"
     varType = "boolean"
-  elsif (var =~ /id$/ || var =~ /^[0-9]+$/)
+  elsif (var =~ /id$/i || var =~ /^[0-9]+$/)
     varType = "integer"
   elsif (var =~ /array/i)
     varType = "array"
