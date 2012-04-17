@@ -93,14 +93,13 @@ end
 
 def get_var_type(var, methodNameArray = Array.new)
   methodNameArray.each do |methodNamePart|
-    if methodNamePart.downcase == "is"
+    case methodNamePart.downcase
+    when "is", "can", "has"
       return "boolean"
-    end
-    if methodNamePart.downcase == "count"
+    when "count", "total"
       return "integer"
-    end
-    if methodNamePart.downcase == "ids"
-      return "array"
+    when "ids"
+       return "array"
     end
   end
   var = var.strip()
