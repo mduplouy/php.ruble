@@ -53,8 +53,9 @@ command 'Add PHPDoc For Method/Function' do |cmd|
       end
     end
 
-    if /\breturn\b/.match(input) 
-      toPrint += "\t * @return ${" + @@COUNT.to_s + ":string}\n"
+    if /\breturn\b/.match(input)
+      returnType = get_var_type("", methodNameArray)
+      toPrint += "\t * @return ${" + @@COUNT.to_s + ":" + returnType + "}\n"
       @@COUNT += 1
     end
     toPrint += "\t */\n"
@@ -90,7 +91,12 @@ command 'Add PHPDoc For Class Variables' do |cmd|
   end
 end
 
-def get_var_type(var)
+def get_var_type(var, methodNameArray = Array.new)
+  methodNameArray.each do |methodNamePart|
+    if methodNamePart.downcase == "is"
+      return "boolean"
+    end
+  end
   var = var.strip()
   if var == "true" || var == "false"
     varType = "boolean"
