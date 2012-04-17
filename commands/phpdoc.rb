@@ -96,6 +96,12 @@ def get_var_type(var, methodNameArray = Array.new)
     if methodNamePart.downcase == "is"
       return "boolean"
     end
+    if methodNamePart.downcase == "count"
+      return "integer"
+    end
+    if methodNamePart.downcase == "ids"
+      return "array"
+    end
   end
   var = var.strip()
   if var == "true" || var == "false"
