@@ -12,7 +12,7 @@ command 'Getter/Setter generator' do |cmd|
     contents = context.input
     props     = []
     vars.each { |var|
-      if var.match(/(?:public|protected|private)\s*\$(\w+);/)
+      if var.match(/(?:public|protected|private)\s*\$(\w+)(.)*;/)
         props.push(get_both($1, contents))
       end
     }

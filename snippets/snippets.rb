@@ -144,7 +144,8 @@ $0'
   
   snippet 'if ...' do |s|
     s.trigger = 'if'
-    s.expansion = 'if (${1:condition}) {
+    s.expansion = 'if (${1:condition}) 
+{
 	${0:// code...}
 }'
   end
