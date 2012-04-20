@@ -81,16 +81,19 @@ END
     end
     main_menu.separator
     main_menu.menu 'Custom Commands' do |submenu|
+      submenu.menu 'Utility Functions' do |submenu2|
+        submenu2.command 'Remove Trailing Whitespace'
+      end
       submenu.menu 'Generate Getters/Setters' do |submenu2|
         submenu2.command 'Getter/Setter generator'
         submenu2.command 'Getter generator'
         submenu2.command 'Setter generator'
-      end      
+      end
       submenu.menu 'PHPDoc Commands' do |submenu2|
         submenu2.command 'Add PHPDoc For Method/Function'
         submenu2.command 'Add PHPDoc For Class Variables'
       end
-      
+
     end
   end
 end
