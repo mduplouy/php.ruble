@@ -16,7 +16,7 @@ command 'Add PHPDoc For Method/Function' do |cmd|
       methodDescription += namePart.capitalize + " "
     end
     if methodNameArray.count == 1
-      methodNameArray = methodName.split /(?=[A-Z])/
+      methodNameArray = methodName.split(/(?=[A-Z])/)
       methodDescription = ""
       methodNameArray.each do |namePart|
         methodDescription += namePart.capitalize + " "
