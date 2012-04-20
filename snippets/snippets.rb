@@ -165,7 +165,7 @@ $0'
     s.expansion = '\$${1:arrayName} = array(\'$2\' => ${3:,} $0);'
   end
   
-  snippet 'Class Variable' do |s|
+  snippet t(:class_variable) do |s|
     s.trigger = 'doc_v'
     s.expansion = '/**
  * ${3:undocumented class variable}
@@ -175,7 +175,7 @@ $0'
 ${1:var} \$$2;$0'
   end
   
-  snippet 'Class' do |s|
+  snippet t(:class) do |s|
     s.trigger = 'doc_c'
     s.expansion = '/**
  * ${3:undocumented class}
@@ -187,7 +187,7 @@ class ${1:ClassName} {$0
 } // END'
   end
   
-  snippet 'Constant Definition' do |s|
+  snippet t(:constant_definition) do |s|
     s.trigger = 'doc_d'
     s.expansion = '/**
  * ${3:undocumented constant}
@@ -195,7 +195,7 @@ class ${1:ClassName} {$0
 define($1, $2);$0'
   end
   
-  snippet 'Function Signature' do |s|
+  snippet t(:function_signature) do |s|
     s.trigger = 'doc_s'
     s.expansion = '/**
  * ${4:undocumented function}
@@ -206,7 +206,7 @@ define($1, $2);$0'
 function ${1:functionName}($2);$0'
   end
   
-  snippet 'Function' do |s|
+  snippet t(:function) do |s|
     s.trigger = 'doc_f'
     s.expansion = '/**
  * ${4:undocumented function}
@@ -218,7 +218,7 @@ function ${1:functionName}($2) {$0
 }'
   end
   
-  snippet 'Header' do |s|
+  snippet t(:header) do |s|
     s.trigger = 'doc_h'
     s.expansion = '/**
  * $1
@@ -235,7 +235,7 @@ function ${1:functionName}($2) {$0
 '
   end
   
-  snippet 'Interface' do |s|
+  snippet t(:interface) do |s|
     s.trigger = 'doc_i'
     s.expansion = '/**
  * ${2:undocumented interface}
@@ -272,7 +272,7 @@ interface ${1:InterfaceName} {$0
     s.expansion = 'return true;$0'
   end
   
-    snippet 'Start Docblock' do |s|
+    snippet t(:start_docblock) do |s|
     s.trigger = '/**'
     s.expansion = '/**
  * $0

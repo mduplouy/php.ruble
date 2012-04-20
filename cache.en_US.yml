@@ -44,34 +44,6 @@ children:
 - !command
   async: false
   customProperties: null
-  displayName: Add PHPDoc For Method/Function
-  input: [selection]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/phpdoc.rb
-  runType: current_thread
-  scope: null
-  workingDirectoryType: UNDEFINED
-- !command
-  async: false
-  customProperties: null
-  displayName: Add PHPDoc For Class Variables
-  input: [selection]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/phpdoc.rb
-  runType: current_thread
-  scope: null
-  workingDirectoryType: UNDEFINED
-- !command
-  async: false
-  customProperties: null
   displayName: Help
   input: [none]
   inputPath: null
@@ -168,7 +140,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: &id001 []
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -187,7 +159,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -206,7 +178,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -225,7 +197,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -244,7 +216,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -263,7 +235,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -282,7 +254,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -301,7 +273,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -320,7 +292,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -341,7 +313,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -362,7 +334,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -381,7 +353,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -400,7 +372,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -419,7 +391,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -438,7 +410,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -457,7 +429,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -477,7 +449,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -497,7 +469,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -517,7 +489,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -542,7 +514,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -561,7 +533,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -581,7 +553,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -600,7 +572,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -619,7 +591,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -638,7 +610,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -657,7 +629,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -677,7 +649,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -697,7 +669,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -716,7 +688,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -736,7 +708,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -756,7 +728,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -777,7 +749,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -798,7 +770,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -817,7 +789,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -836,7 +808,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -855,7 +827,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -874,7 +846,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -893,7 +865,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -912,7 +884,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -931,7 +903,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -951,7 +923,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -972,7 +944,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -991,7 +963,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: source.php
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1010,7 +982,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1029,7 +1001,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1048,7 +1020,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1067,7 +1039,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1086,7 +1058,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1105,7 +1077,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1125,7 +1097,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1145,7 +1117,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.SnippetElement
   async: false
@@ -1165,7 +1137,7 @@ children:
   path: snippets/snippets.rb
   runType: current_thread
   scope: text.html - source
-  tags: *id001
+  tags: []
   workingDirectoryType: UNDEFINED
 - !template
   async: false
@@ -1181,9 +1153,79 @@ children:
   runType: current_thread
   scope: null
   workingDirectoryType: UNDEFINED
+- !command
+  async: false
+  customProperties: null
+  displayName: Getter/Setter generator
+  input: [document]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [CTRL+S]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/getters_setters.rb
+  runType: current_thread
+  scope: source.php
+  workingDirectoryType: UNDEFINED
+- !command
+  async: false
+  customProperties: null
+  displayName: Getter generator
+  input: [document]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+G]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/getters_setters.rb
+  runType: current_thread
+  scope: source.php
+  workingDirectoryType: UNDEFINED
+- !command
+  async: false
+  customProperties: null
+  displayName: Setter generator
+  input: [document]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+S]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/getters_setters.rb
+  runType: current_thread
+  scope: source.php
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.CommandElement
+  async: false
+  customProperties: null
+  displayName: Add PHPDoc For Method/Function
+  input: [selection]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/phpdoc.rb
+  runType: current_thread
+  scope: null
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.CommandElement
+  async: false
+  customProperties: null
+  displayName: Add PHPDoc For Class Variables
+  input: [selection]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/phpdoc.rb
+  runType: current_thread
+  scope: null
+  workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.MenuElement
   children:
-  - children: *id001
+  - children: &id001 []
     commandName: Documentation for Word
     customProperties: null
     displayName: Documentation for Word
@@ -1540,6 +1582,18 @@ children:
   - children:
     - children:
       - children: *id001
+        commandName: Remove Trailing Whitespace
+        customProperties: null
+        displayName: Remove Trailing Whitespace
+        path: bundle.rb
+        scope: null
+      commandName: Utility Functions
+      customProperties: null
+      displayName: Utility Functions
+      path: bundle.rb
+      scope: null
+    - children:
+      - children: *id001
         commandName: Getter/Setter generator
         customProperties: null
         displayName: Getter/Setter generator
@@ -1590,49 +1644,20 @@ children:
   displayName: PHP
   path: bundle.rb
   scope: null
-- !!com.aptana.scripting.model.EnvironmentElement {customProperties: null, displayName: environment-e435a0fd-2759-4e75-85fd-fcab759bd543,
+- !!com.aptana.scripting.model.EnvironmentElement {customProperties: null, displayName: environment-d6daee99-214c-4bf3-b8ee-c0d8e4d12b92,
   path: bundle.rb, scope: source.php}
 - !!com.aptana.scripting.model.CommandElement
   async: false
   customProperties: null
-  displayName: Getter/Setter generator
-  input: [document]
+  displayName: Documentation for Tag
+  input: [selection, word]
   inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [CTRL+S]
+  keyBindingMap: null
   outputPath: null
-  outputType: insert_as_snippet
-  path: commands/getters_setters.rb
+  outputType: show_as_html
+  path: commands/documentation_for_tag.rb
   runType: current_thread
-  scope: source.php
-  workingDirectoryType: UNDEFINED
-- !!com.aptana.scripting.model.CommandElement
-  async: false
-  customProperties: null
-  displayName: Getter generator
-  input: [document]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+G]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/getters_setters.rb
-  runType: current_thread
-  scope: source.php
-  workingDirectoryType: UNDEFINED
-- !!com.aptana.scripting.model.CommandElement
-  async: false
-  customProperties: null
-  displayName: Setter generator
-  input: [document]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+S]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/getters_setters.rb
-  runType: current_thread
-  scope: source.php
+  scope: comment.block.documentation.phpdoc.php
   workingDirectoryType: UNDEFINED
 copyright: null
 customProperties: {contact_email_rot_13: pvnjny@tznvy.pbz}
