@@ -1,7 +1,6 @@
 require 'ruble'
 
 command 'Remove Trailing Whitespace' do |cmd|
-  cmd.scope = 'source.php'
   cmd.output = :document
   cmd.trigger = :execution_listener, "org.eclipse.ui.file.save"
   cmd.input = :document
