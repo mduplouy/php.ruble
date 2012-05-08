@@ -10,6 +10,7 @@ command 'Add PHPDoc For Method/Function' do |cmd|
     input = STDIN.read
     signature = input.scan(/function [a-zA-Z0-9_]+[ ]?\(([^\)]*)/i)[0][0]
     methodName = input.scan(/function ([^\(]+)/)[0][0]
+
     methodNameArray = methodName.strip().split("_")
     methodDescription = ""
     methodNameArray.each do |namePart|
@@ -32,7 +33,7 @@ command 'Add PHPDoc For Method/Function' do |cmd|
     if signatureStringSplit.count > 0
       signatureStringSplit.each do |myVar|
         myVarArray = myVar.split("=");
-        
+
         myVar = myVarArray[0].strip()
         myVar = myVar.gsub!('$', '\$')
         varType = ""
@@ -51,6 +52,8 @@ command 'Add PHPDoc For Method/Function' do |cmd|
         toPrint += "\t * @param ${" + @@COUNT.to_s + ":" + varType + "} " + myVar + "\n";
         @@COUNT += 1
       end
+    else
+
     end
 
     if /\breturn\b/.match(input)
@@ -59,7 +62,12 @@ command 'Add PHPDoc For Method/Function' do |cmd|
       @@COUNT += 1
     end
     toPrint += "\t */\n"
-    toPrint += input.gsub!('$', '\$')
+    replaced = input.gsub!('$', '\$')
+    if replaced != nil
+      toPrint += replaced
+    else
+      toPrint += input
+    end
     print toPrint
   end
 end

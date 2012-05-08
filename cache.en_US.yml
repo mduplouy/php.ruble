@@ -44,34 +44,6 @@ children:
 - !command
   async: false
   customProperties: null
-  displayName: Add PHPDoc For Method/Function
-  input: [selection]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/phpdoc.rb
-  runType: current_thread
-  scope: null
-  workingDirectoryType: UNDEFINED
-- !command
-  async: false
-  customProperties: null
-  displayName: Add PHPDoc For Class Variables
-  input: [selection]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/phpdoc.rb
-  runType: current_thread
-  scope: null
-  workingDirectoryType: UNDEFINED
-- !command
-  async: false
-  customProperties: null
   displayName: Help
   input: [none]
   inputPath: null
@@ -1181,6 +1153,48 @@ children:
   scope: text.html - source
   tags: []
   workingDirectoryType: UNDEFINED
+- !command
+  async: false
+  customProperties: null
+  displayName: Getter/Setter generator
+  input: [document]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [CTRL+S]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/getters_setters.rb
+  runType: current_thread
+  scope: source.php
+  workingDirectoryType: UNDEFINED
+- !command
+  async: false
+  customProperties: null
+  displayName: Getter generator
+  input: [document]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+G]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/getters_setters.rb
+  runType: current_thread
+  scope: source.php
+  workingDirectoryType: UNDEFINED
+- !command
+  async: false
+  customProperties: null
+  displayName: Setter generator
+  input: [document]
+  inputPath: null
+  keyBindingMap:
+    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+S]
+  outputPath: null
+  outputType: insert_as_snippet
+  path: commands/getters_setters.rb
+  runType: current_thread
+  scope: source.php
+  workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.MenuElement
   children:
   - children: &id001 []
@@ -1602,7 +1616,7 @@ children:
   displayName: PHP
   path: bundle.rb
   scope: null
-- !!com.aptana.scripting.model.EnvironmentElement {customProperties: null, displayName: environment-83329b6d-ec39-433a-a74e-593b4ed5b512,
+- !!com.aptana.scripting.model.EnvironmentElement {customProperties: null, displayName: environment-733d70e1-272d-4739-81fb-a1d64d42776f,
   path: bundle.rb, scope: source.php}
 - !!com.aptana.scripting.model.CommandElement
   async: false
@@ -1622,44 +1636,30 @@ children:
 - !!com.aptana.scripting.model.CommandElement
   async: false
   customProperties: null
-  displayName: Getter/Setter generator
-  input: [document]
+  displayName: Add PHPDoc For Method/Function
+  input: [selection]
   inputPath: null
   keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [CTRL+S]
+    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
   outputPath: null
   outputType: insert_as_snippet
-  path: commands/getters_setters.rb
+  path: commands/phpdoc.rb
   runType: current_thread
-  scope: source.php
+  scope: null
   workingDirectoryType: UNDEFINED
 - !!com.aptana.scripting.model.CommandElement
   async: false
   customProperties: null
-  displayName: Getter generator
-  input: [document]
+  displayName: Add PHPDoc For Class Variables
+  input: [selection]
   inputPath: null
   keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+G]
+    !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+SHIFT+COMMAND+C]
   outputPath: null
   outputType: insert_as_snippet
-  path: commands/getters_setters.rb
+  path: commands/phpdoc.rb
   runType: current_thread
-  scope: source.php
-  workingDirectoryType: UNDEFINED
-- !!com.aptana.scripting.model.CommandElement
-  async: false
-  customProperties: null
-  displayName: Setter generator
-  input: [document]
-  inputPath: null
-  keyBindingMap:
-    !!com.aptana.scripting.model.Platform 'ALL': [M2+M3+S]
-  outputPath: null
-  outputType: insert_as_snippet
-  path: commands/getters_setters.rb
-  runType: current_thread
-  scope: source.php
+  scope: null
   workingDirectoryType: UNDEFINED
 copyright: null
 customProperties: {contact_email_rot_13: pvnjny@tznvy.pbz}
