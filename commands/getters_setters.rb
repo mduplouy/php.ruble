@@ -64,7 +64,7 @@ def print_content(contents, props)
     contents[last] = ''
     contents.gsub!('$', '\$')
     contents += "\n\t" + props.join("\n\n\t") + "\n}"
-    
+
     print contents
 end
 
@@ -78,45 +78,45 @@ def get_getter(name, contents)
   if contents.match(/#{getter}/)
     return
   end
-  
+
     '/**
      * Get ' + name + '
      *
      * @return ${' + @@COUNT.to_s + ':VariableType}
      */
-    public function ' + getter + '()
-    {
-        return \$this->' + name + ';
-    }'
+     public function ' + getter + '()
+     {
+          return \$this->' + name + ';
+     }'
 end
 
 def get_setter(name, contents)
   setter = 'set_' + name
-  
+
   if contents.match(/#{setter}/)
     return
   end
-    
+
     '/**
      * Set ' + name + '
      *
      * @param ${' + @@COUNT.to_s + ':VariableType} \$' + name + '
      * @return ' + get_fqn(contents).to_s.split(" ")[0] + '
      */
-    public function ' + setter + '(\$' + name + ')
-    {
-        \$this->' + name + ' = \$' + name + ';
-        return \$this;
-    }'
+     public function ' + setter + '(\$' + name + ')
+     {
+          \$this->' + name + ' = \$' + name + ';
+          return \$this;
+     }'
 end
 
 def get_both(name, contents)
   out = "\t" + get_getter(name, contents).to_s
   out += "\n\n"
   out += "\t" + get_setter(name, contents).to_s
-  
+
   @@COUNT += 1
-  
+
   return out.strip
 end
 
@@ -124,14 +124,14 @@ def get_fqn(contents)
   fqn = nil
   ns  = nil
   cls = nil
-    
+
   if contents.match(/namespace (.*);/)
     ns = $1
   end
-    
+
   if contents.match(/class (.*)/)
     cls = $1
   end
-    
+
   ns.nil? ? cls : ns + '\\' + cls
 end
