@@ -6,14 +6,18 @@ command 'Getter/Setter generator' do |cmd|
   cmd.scope = 'source.php'
   cmd.output = :insert_as_snippet
   cmd.input = :document
-  cmd.key_binding = "Ctrl+S"
+  cmd.key_binding = "Ctrl+G"
   cmd.invoke do |context|
     vars     = get_vars
     contents = context.input
     props     = []
+    type = nil
     vars.each { |var|
-      if var.match(/(?:public|protected|private)\s*\$(\w+)(.)*;/)
-        props.push(get_both($1, contents))
+      if var.match(/@var\s+([^\s]+)/)
+          type = $1
+      end
+      if var.match(/(?:protected|private)\s*\$(\w+)\s*(.)*;/)
+        props.push(get_both($1, type, contents))
       end
     }
 
@@ -30,9 +34,13 @@ command 'Getter generator' do |cmd|
     vars     = get_vars
     contents = context.input
     props     = []
+    type = nil
     vars.each { |var|
-      if var.match(/(?:public|protected|private)\s*\$(\w+);/)
-        props.push(get_getter($1, contents))
+      if var.match(/@var\s+([^\s]+)/)
+          type = $1
+      end
+      if var.match(/(?:protected|private)\s*\$(\w+);/)
+        props.push(get_getter($1, type, contents))
       end
     }
 
@@ -49,9 +57,13 @@ command 'Setter generator' do |cmd|
     vars     = get_vars
     contents = context.input
     props     = []
+    type = nil
     vars.each { |var|
-      if var.match(/(?:public|protected|private)\s*\$(\w+);/)
-        props.push(get_setter($1, contents))
+      if var.match(/@var\s+([^\s]+)/)
+          type = $1
+      end
+      if var.match(/(?:protected|private)\s*\$(\w+);/)
+        props.push(get_setter($1, type, contents))
       end
     }
 
@@ -73,47 +85,74 @@ def get_vars
   vars.split("\n")
 end
 
-def get_getter(name, contents)
-  getter = 'get_' + name
-  if contents.match(/#{getter}/)
+def get_getter(name, type, contents)
+  getter = 'get' + name.slice(0,1).capitalize + name.slice(1..-1)
+  if contents.match(/function #{getter}/)
     return
+  end
+
+  if type
+    paramType = type
+  else
+    paramType = '${' + @@COUNT.to_s + ':VariableType}'
   end
 
     '/**
      * Get ' + name + '
      *
-     * @return ${' + @@COUNT.to_s + ':VariableType}
+     * @return ' + paramType + '
      */
-     public function ' + getter + '()
-     {
-          return \$this->' + name + ';
-     }'
+    public function ' + getter + '()
+    {
+        return \$this->' + name + ';
+    }'
 end
 
-def get_setter(name, contents)
-  setter = 'set_' + name
+def get_setter(name, type, contents)
 
-  if contents.match(/#{setter}/)
+  setter = 'set' + name.slice(0,1).capitalize + name.slice(1..-1)
+
+  if contents.match(/function #{setter}/)
     return
+  end
+
+  if type
+    paramType = type
+    if type == 'string'
+      paramCast = ''
+      paramPrototype = ''
+    else
+      if type.match(/int|bool/)
+        paramCast = '(' + type + ') '
+        paramPrototype = ''
+      else
+        paramCast = ''
+        paramPrototype = type + ' '
+      end
+    end
+  else
+    paramType = '${' + @@COUNT.to_s + ':VariableType}'
+    paramCast = ''
+    paramPrototype = ''
   end
 
     '/**
      * Set ' + name + '
      *
-     * @param ${' + @@COUNT.to_s + ':VariableType} \$' + name + '
+     * @param ' + paramType + ' \$' + name + '
      * @return ' + get_fqn(contents).to_s.split(" ")[0] + '
      */
-     public function ' + setter + '(\$' + name + ')
-     {
-          \$this->' + name + ' = \$' + name + ';
-          return \$this;
-     }'
+    public function ' + setter + '(' + paramPrototype + '\$' + name + ')
+    {
+        \$this->' + name + ' = ' + paramCast + '\$' + name + ';
+        return \$this;
+    }'
 end
 
-def get_both(name, contents)
-  out = "\t" + get_getter(name, contents).to_s
+def get_both(name, type, contents)
+  out = "\t" + get_setter(name, type, contents).to_s
   out += "\n\n"
-  out += "\t" + get_setter(name, contents).to_s
+  out += "\t" + get_getter(name, type, contents).to_s
 
   @@COUNT += 1
 
@@ -126,7 +165,7 @@ def get_fqn(contents)
   cls = nil
 
   if contents.match(/namespace (.*);/)
-    ns = $1
+    ns = '\\' + $1
   end
 
   if contents.match(/class (.*)/)
